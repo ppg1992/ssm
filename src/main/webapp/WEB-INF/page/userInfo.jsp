@@ -7,14 +7,27 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 <head>
     <title>user info</title>
 </head>
 <body>
-<p>${user.id}</p>
-<p>${user.name}</p>
-<p>${user.password}</p>
-<p>${user.sex}</p>
-<p>${user.age}</p>
+
+<div id="user">
+
+</div>
+<button onclick="load();" >加载数据</button>
 </body>
+
+<script>
+    function load(){
+        $.getJSON("http://localhost:8080/user/selectOne",{"id":1},function (data) {
+            $("div").html("");
+            $.each(data,function (i,filed) {
+                $("#user").append(i+":"+filed+"<br>");
+            })
+        })
+    }
+</script>
 </html>

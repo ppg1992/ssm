@@ -38,11 +38,9 @@ public class UserController {
         return this.userService.queryById(id);
     }
 
-    @GetMapping("selectOneInfo")
-    public String selectOneInfo(Integer id, HttpServletRequest request) {
-        User user = userService.queryById(id);
-        request.setAttribute("user",user);
-        log.info(request.getRequestedSessionId());
+
+    @GetMapping("userInfo")
+    public String userInfo() {
         return "userInfo";
     }
 
