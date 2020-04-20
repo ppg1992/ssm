@@ -10,7 +10,7 @@
     http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms-3.0.xsd">
 
 
-    <!-- Spring提供的JMS工具类，它可以进行消息发送、接收等 -->
+    <!-- Spring提供的JMS工具类，它可以进行消息发送、接收等（queue模式）-->
     <bean id="jmsTemplateQueue" class="org.springframework.jms.core.JmsTemplate">
         <!-- 这个connectionFactory对应的是我们定义的Spring提供的那个ConnectionFactory对象 -->
         <property name="connectionFactory" ref="connectionFactory"/>
@@ -20,7 +20,7 @@
         <property name="defaultDestination" ref="queueDestination"/>
     </bean>
 
-    <!-- Spring提供的JMS工具类，它可以进行消息发送、接收等 -->
+    <!-- Spring提供的JMS工具类，它可以进行消息发送、接收等（topic模式） -->
     <bean id="jmsTemplateTopic" class="org.springframework.jms.core.JmsTemplate">
         <!-- 这个connectionFactory对应的是我们定义的Spring提供的那个ConnectionFactory对象 -->
         <property name="connectionFactory" ref="connectionFactory"/>
@@ -43,11 +43,11 @@
         <property name="targetConnectionFactory" ref="targetConnectionFactory"/>
     </bean>
 
-    <!--工作模式、目的地-->
+    <!--queue工作模式、目的地-->
     <bean id="queueDestination" class="org.apache.activemq.command.ActiveMQQueue">
         <constructor-arg name="name" value="queueName"/>
     </bean>
-    <!--订阅模式、目的地-->
+    <!--topic订阅模式、目的地-->
     <bean id="topicDestination" class="org.apache.activemq.command.ActiveMQTopic">
         <constructor-arg name="name" value="topicName"/>
     </bean>
