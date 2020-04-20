@@ -65,7 +65,7 @@
 
     <!--总的日志级别-->
     <root>
-        <level value="DEBUG"/>
+        <level value="INFO"/>
         <appender-ref ref="PROJECT"/>
         <appender-ref ref="PROJECT-DEBUG"/>
         <appender-ref ref="PROJECT-ERROR"/>

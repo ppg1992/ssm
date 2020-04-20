@@ -8,7 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * (User)表控制层
@@ -34,13 +36,20 @@ public class UserController {
      */
     @GetMapping("selectOne")
     @ResponseBody
-    public User selectOne(Integer id) {
+    public User selectOne(Integer id,HttpServletRequest request) {
+        Cookie[] cookies = request.getCookies();
+        if (cookies!=null&&cookies.length>0){
+            for (int i = 0; i < cookies.length; i++) {
+                System.out.println(cookies[i].getName()+":"+cookies[i].getValue());
+            }
+        }
         return this.userService.queryById(id);
     }
 
 
     @GetMapping("userInfo")
-    public String userInfo() {
+    public String userInfo(HttpServletResponse response) {
+        response.addCookie(new Cookie("token","theKEY"));
         return "userInfo";
     }
 

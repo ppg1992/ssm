@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jms="http://www.springframework.org/schema/jms"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+     http://www.springframework.org/schema/context
+     http://www.springframework.org/schema/context/spring-context-3.0.xsd
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms-3.0.xsd">
+
+
+    <!-- Spring提供的JMS工具类，它可以进行消息发送、接收等 -->
+    <bean id="jmsTemplateQueue" class="org.springframework.jms.core.JmsTemplate">
+        <!-- 这个connectionFactory对应的是我们定义的Spring提供的那个ConnectionFactory对象 -->
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <!--true为topic订阅模式  false为工作queue模式-->
+        <property name="pubSubDomain" value="false"/>
+        <!--默认目的地-->
+        <property name="defaultDestination" ref="queueDestination"/>
+    </bean>
+
+    <!-- Spring提供的JMS工具类，它可以进行消息发送、接收等 -->
+    <bean id="jmsTemplateTopic" class="org.springframework.jms.core.JmsTemplate">
+        <!-- 这个connectionFactory对应的是我们定义的Spring提供的那个ConnectionFactory对象 -->
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <!--true为topic订阅模式  false为工作queue模式-->
+        <property name="pubSubDomain" value="true"/>
+        <!--默认目的地-->
+        <property name="defaultDestination" ref="topicDestination"/>
+    </bean>
+
+    <!-- 真正可以产生Connection的ConnectionFactory，由对应的 JMS服务厂商提供-->
+    <bean id="targetConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+        <property name="brokerURL" value="tcp://localhost:61616"/>
+        <property name="userName" value="admin"/>
+        <property name="password" value="admin"/>
+    </bean>
+
+    <!-- Spring用于管理真正的ConnectionFactory的ConnectionFactory -->
+    <bean id="connectionFactory" class="org.springframework.jms.connection.SingleConnectionFactory">
+        <!-- 目标ConnectionFactory对应真实的可以产生JMS Connection的ConnectionFactory -->
+        <property name="targetConnectionFactory" ref="targetConnectionFactory"/>
+    </bean>
+
+    <!--工作模式、目的地-->
+    <bean id="queueDestination" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg name="name" value="queueName"/>
+    </bean>
+    <!--订阅模式、目的地-->
+    <bean id="topicDestination" class="org.apache.activemq.command.ActiveMQTopic">
+        <constructor-arg name="name" value="topicName"/>
+    </bean>
+
+
+    <!-- 消息监听器 0-->
+    <bean id="CUS_000" class="com.ppg.ssm.listener.ConsumerMessageListener">
+        <constructor-arg name="ID" value="CUS_000"/>
+    </bean>
+    <!-- 消息监听器 1-->
+    <bean id="CUS_001" class="com.ppg.ssm.listener.ConsumerMessageListener">
+        <constructor-arg name="ID" value="CUS_001"/>
+    </bean>
+    <!-- 消息监听器 2-->
+    <bean id="CUS_002" class="com.ppg.ssm.listener.ConsumerMessageListener">
+        <constructor-arg name="ID" value="CUS_002"/>
+    </bean>
+    <!-- 消息监听器 3-->
+    <bean id="CUS_003" class="com.ppg.ssm.listener.ConsumerMessageListener">
+        <constructor-arg name="ID" value="CUS_003"/>
+    </bean>
+
+    <!-- 消息监听容器 0-->
+    <bean id="jmsContainer000" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory" />
+        <property name="destination" ref="queueDestination" />
+        <property name="messageListener" ref="CUS_000" />
+    </bean>
+    <!-- 消息监听容器 1-->
+    <bean id="jmsContainer001" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory" />
+        <property name="destination" ref="queueDestination" />
+        <property name="messageListener" ref="CUS_001" />
+    </bean>
+    <!-- 消息监听容器 2-->
+    <bean id="jmsContainer002" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory" />
+        <property name="destination" ref="topicDestination" />
+        <property name="messageListener" ref="CUS_002" />
+    </bean>
+    <!-- 消息监听容器 3-->
+    <bean id="jmsContainer003" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory" />
+        <property name="destination" ref="topicDestination" />
+        <property name="messageListener" ref="CUS_003" />
+    </bean>
+</beans>

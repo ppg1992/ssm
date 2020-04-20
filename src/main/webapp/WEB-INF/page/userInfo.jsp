@@ -22,10 +22,13 @@
 
 <script>
     function load(){
-        $.getJSON("http://localhost:8080/user/selectOne",{"id":1},function (data) {
+        let url=location.href;
+        let id=url.substr(url.lastIndexOf("=")+1);
+        console.log(id);
+        $.getJSON("http://localhost:8080/user/selectOne",{"id":id},function (data) {
             $("div").html("");
-            $.each(data,function (i,filed) {
-                $("#user").append(i+":"+filed+"<br>");
+            $.each(data,function (f,v) {
+                $("#user").append(f+":"+v+"<br>");
             })
         })
     }
