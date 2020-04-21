@@ -46,11 +46,27 @@ public class UserController {
         return this.userService.queryById(id);
     }
 
-
+    /**
+     * 页面显示数据
+     * @param response
+     * @return
+     */
     @GetMapping("userInfo")
     public String userInfo(HttpServletResponse response) {
         response.addCookie(new Cookie("token","theKEY"));
         return "userInfo";
+    }
+
+    /**
+     * 插入一条数据
+     * @param user
+     * @return
+     */
+    @PostMapping("insertOne")
+    @ResponseBody
+    public User insertOne(@RequestBody User user){
+        user = userService.insert(user);
+        return user;
     }
 
 }
