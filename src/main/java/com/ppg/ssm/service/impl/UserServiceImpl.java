@@ -3,9 +3,11 @@ package com.ppg.ssm.service.impl;
 import com.ppg.ssm.entity.User;
 import com.ppg.ssm.dao.UserDao;
 import com.ppg.ssm.service.UserService;
+import com.ppg.ssm.vo.UserVO;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.NumberUtils;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -78,5 +80,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean deleteById(Integer id) {
         return this.userDao.deleteById(id) > 0;
+    }
+
+    @Override
+    public List<User> queryAllPlus(UserVO userVO) {
+            return userDao.queryAllPlus(userVO, userVO.getOffset(), userVO.getLimit(),userVO.getOrders());
     }
 }

@@ -1,5 +1,6 @@
 package com.ppg.ssm.dao;
 
+import com.ppg.ssm.entity.OrderSetting;
 import com.ppg.ssm.entity.User;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
@@ -32,6 +33,16 @@ public interface UserDao {
      */
     List<User> queryAllByLimit(@Param("offset") int offset, @Param("limit") int limit);
 
+    /**
+     * 查询指定行数据,分页
+     * @param offset 查询起始位置
+     * @param limit 查询条数
+     * @return 对象列表
+     */
+    List<User> queryAllPlus(@Param("user") User user,
+                            @Param("offset") int offset,
+                            @Param("limit") int limit,
+                            @Param("orders")List<OrderSetting> orders);
 
     /**
      * 通过实体作为筛选条件查询

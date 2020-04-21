@@ -1,6 +1,8 @@
 package com.ppg.ssm.service;
 
 import com.ppg.ssm.entity.User;
+import com.ppg.ssm.vo.UserVO;
+
 import java.util.List;
 
 /**
@@ -51,5 +53,8 @@ public interface UserService {
      * @return 是否成功
      */
     boolean deleteById(Integer id);
+
+
+    List<User> queryAllPlus(UserVO userVO);
 
 }

@@ -2,6 +2,7 @@ package com.ppg.ssm.controller;
 
 import com.ppg.ssm.entity.User;
 import com.ppg.ssm.service.UserService;
+import com.ppg.ssm.vo.UserVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
@@ -11,6 +12,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 /**
  * (User)表控制层
@@ -68,5 +70,13 @@ public class UserController {
         user = userService.insert(user);
         return user;
     }
+
+    @PostMapping("queryAllPlus")
+    @ResponseBody
+    public List<User> queryAllPlus(@RequestBody UserVO userVO){
+        List<User> users = userService.queryAllPlus(userVO);
+        return users;
+    }
+
 
 }

@@ -50,6 +50,36 @@
         </where>
     </select>
 
+    <!--通过实体作为筛选条件查询,排序,分页-->
+    <select id="queryAllPlus" resultMap="UserMap">
+        select
+          id, name, password, sex, age
+        from test.user
+        <where>
+            <if test="user.id != null">
+                and id = #{user.id}
+            </if>
+            <if test="user.name != null and user.name != ''">
+                and name = #{user.name}
+            </if>
+            <if test="user.password != null and user.password != ''">
+                and password = #{user.password}
+            </if>
+            <if test="user.sex != null">
+                and sex = #{user.sex}
+            </if>
+            <if test="user.age != null">
+                and age = #{user.age}
+            </if>
+        </where>
+        <if test="orders!=null and orders.size>0">
+            <foreach collection="orders"  item="order" open="order by" separator=",">
+                #{order.column} #{order.order}
+            </foreach>
+        </if>
+        limit #{offset}, #{limit}
+    </select>
+
     <!--新增所有列-->
     <insert id="insert" keyProperty="id" useGeneratedKeys="true">
         insert into test.user(name, password, sex, age)
