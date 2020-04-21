@@ -5,6 +5,7 @@ import com.ppg.ssm.dao.UserDao;
 import com.ppg.ssm.service.UserService;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -50,6 +51,7 @@ public class UserServiceImpl implements UserService {
      * @return 实例对象
      */
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public User insert(User user) {
         this.userDao.insert(user);
         return user;
