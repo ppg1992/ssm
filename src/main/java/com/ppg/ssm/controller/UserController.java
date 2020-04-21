@@ -49,6 +49,18 @@ public class UserController {
     }
 
     /**
+     * 通过主键查询单条数据
+     *
+     * @param id 主键
+     * @return 单条数据
+     */
+    @GetMapping("selectOneName")
+    @ResponseBody
+    public String selectOneName(Integer id,HttpServletRequest request) {
+        return this.userService.queryById(id).getName();
+    }
+
+    /**
      * 页面显示数据
      * @param response
      * @return

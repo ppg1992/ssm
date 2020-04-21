@@ -7,4 +7,6 @@
     <import resource="spring-mybatis.xml"/>
     <!--activeMQ配置-->
     <import resource="spring-activeMQ"/>
+    <!--redis配置-->
+    <import resource="spring-redis.xml"/>
 </beans>
