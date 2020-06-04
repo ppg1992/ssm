@@ -19,7 +19,7 @@
     <maven.compiler.target>1.7</maven.compiler.target>
     <org.springframework.version>4.3.7.RELEASE</org.springframework.version>
     <mybatis.version>3.5.0</mybatis.version>
-    <lunece.version>4.10.2</lunece.version>
+    <lunece.version>8.5.1</lunece.version>
   </properties>
 
   <dependencies>
