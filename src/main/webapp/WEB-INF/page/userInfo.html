@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>user info</title>
+</head>
+<body>
+
+<div id="user">
+
+</div>
+<button onclick="load();" >加载数据</button><br>
+
+ticketnum<input type="text" id="ticketnum" value="a17250c163224af2947affc8f237f4bb"/><br>
+mobile<input type="text" id="mobile" value="15308408233"/><br>
+clientId<input type="text" id="clientId" value="102001"/><br>
+timestamp<input type="text" id="timestamp"/><br>
+sign<input type="text" id="sign"/><br>
+<input id="goService" type="button" value="跳转到使用界面" onclick="goService();"/>
+</body>
+
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+<script type="text/javascript">
+
+   window.onload=function () {
+       let ticketnum=$("#ticketnum").val();
+       let mobile=$("#mobile").val();
+       let clientId=$("#clientId").val();
+       let date = new Date();
+       $("#timestamp").val(Math.trunc(date.getTime()/1000));
+       let timestamp=$("#timestamp").val();
+       let requestData='{"requestParams":{"ticketnum":"'+ticketnum+'","mobile":"'+mobile+'","clientId":"'+clientId+'"},"authentication":{"timestamp":"'+timestamp+'"}}'
+       let client='efedbf283790e0a881cf0c6ad62e2150';
+       let str=client+'{"requestParams":{"ticketnum":"'+ticketnum+'","mobile":"'+mobile+'","clientId":"'+clientId+'"},"authentication":{"timestamp":"'+timestamp+'"}}'+timestamp;
+       console.info(str);
+       $("#sign").val(md5(str));
+   } ;
+
+    function load(){
+        let url=location.href;
+        let id=url.substr(url.lastIndexOf("=")+1);
+        console.log(id);
+        $.getJSON("http://localhost:8087/user/selectOne",{"id":id},function (data) {
+            $("div").html("");
+            $.each(data,function (f,v) {
+                $("#user").append(f+":"+v+"<br>");
+            })
+        })
+    }
+
+    function goService() {
+        let ticketnum=$("#ticketnum").val();
+        let mobile=$("#mobile").val();
+        let clientId=$("#clientId").val();
+        let timestamp=$("#timestamp").val();
+        let requestData={"requestParams": {"ticketnum": ticketnum,"mobile": mobile,"clientId": clientId},"authentication": {"timestamp":timestamp}};
+        let client='efedbf283790e0a881cf0c6ad62e2150';
+        let sign=$("#sign").val();
+
+        $.ajax({
+            type: "POST",
+            url: "http://apichinalife.yuantongjy.mycjj.com/internal/getServiceUrl.html?sign="+sign,
+            contentType: "application/json; charset=utf-8",
+            data:JSON.stringify(requestData),
+            dataType: "json",
+            xhrFields: {
+                withCredentials: true
+            },
+            crossDomain : true,
+            success: function(data){
+                console.log(data.url);
+                location.href=data.url;
+            },
+            error: function(jqXHR){
+                alert("发生错误：" + jqXHR.status);
+            },
+        });
+    }
+</script>
+</html>

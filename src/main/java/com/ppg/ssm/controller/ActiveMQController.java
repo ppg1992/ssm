@@ -1,3 +1,4 @@
+/*
 package com.ppg.ssm.controller;
 
 import org.apache.activemq.command.ActiveMQQueue;
@@ -28,3 +29,4 @@ public class ActiveMQController {
         jmsTemplateTopic.convertAndSend(message);
     }
 }
+*/

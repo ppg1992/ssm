@@ -4,7 +4,6 @@ import com.ppg.ssm.entity.User;
 import com.ppg.ssm.service.UserService;
 import com.ppg.ssm.vo.UserVO;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -38,13 +37,17 @@ public class UserController {
      */
     @GetMapping("selectOne")
     @ResponseBody
-    public User selectOne(Integer id,HttpServletRequest request) {
+    public User selectOne(Integer id,HttpServletRequest request,HttpServletResponse response) {
         Cookie[] cookies = request.getCookies();
         if (cookies!=null&&cookies.length>0){
             for (int i = 0; i < cookies.length; i++) {
-                System.out.println(cookies[i].getName()+":"+cookies[i].getValue());
+                System.out.println(cookies[i].getName()+":"+cookies[i].getValue()+"=="+cookies[i].getDomain());
             }
         }
+//        response.setHeader("P3P","CP=\"NON DSP COR CURa ADMa DEVa TAIa PSAa PSDa IVAa IVDa CONa HISa TELa OTPa OUR UNRa IND UNI COM NAV INT DEM CNT PRE LOC\"");
+        response.addHeader("P3P", "CP=CAO PSA OUR");
+        Cookie cookie = new Cookie("token", "theKEY");
+        response.addCookie(cookie);
         return this.userService.queryById(id);
     }
 
@@ -67,7 +70,6 @@ public class UserController {
      */
     @GetMapping("userInfo")
     public String userInfo(HttpServletResponse response) {
-        response.addCookie(new Cookie("token","theKEY"));
         return "userInfo";
     }
 
@@ -89,6 +91,4 @@ public class UserController {
         List<User> users = userService.queryAllPlus(userVO);
         return users;
     }
-
-
 }

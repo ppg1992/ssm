@@ -48,7 +48,7 @@
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <!-- 查找视图页面的前缀和后缀 -->
         <property name="prefix" value="/WEB-INF/page/" />
-        <property name="suffix" value=".jsp" />
+        <property name="suffix" value=".html" />
     </bean>
 
     <!--对上传文件的支持，springMVC其实是用common-upload来实现 -->
