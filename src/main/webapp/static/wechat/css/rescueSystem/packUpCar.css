@@ -1,0 +1,17 @@
+.top{width: 100%; height: 45px;}
+.topContainer{padding-left: 1rem; line-height: 45px; background: #fff;}
+.topContainer span{font-size: 1rem; color: #DC1C31; font-weight: bold; border-bottom: 2px solid #DC1C31; padding-bottom: 0.8rem;}
+/*第二部分编辑列表*/
+.editorContainer{margin-top: 1rem;}
+.addressList li{background: #fff; position: relative; margin-bottom: 1rem;}
+.leftContent{width: 65%; line-height: 20px; padding: 1.2rem 0.7rem ;top: 50%;position: absolute;margin-top: -30px;}
+.leftContent .name{padding-bottom: 0.2rem;}
+.leftContent .name span:last-child{font-size: 0.8rem;}
+.leftContent .adressName{font-size: 0.8rem; color: #ACACAC;}
+.rightContent{display: block; width: 25%; line-height: 20px; text-align: center; padding: 1.5rem 0;}
+.rightContent div>img{width: 18%;}
+.rightContent div.edi{font-size: 0.8rem; margin-top: 0.6rem;}
+.angle{position: absolute; top:0; left: 0; background: #DC1C31; color: #ffffff; font-size: 0.6rem; padding: 0.2rem 0.4rem;}
+/*第三部分添加新接车点按钮*/
+.addCarBtn{display: block; width: 100%;margin-bottom:1rem;}
+.addCarBtn>div{width: 35%; height: 30px; line-height: 30px; background: #1C1C1C; color: #ffffff; text-align: center; margin: 0 auto; border-radius: 15px;margin-bottom：1rem;}

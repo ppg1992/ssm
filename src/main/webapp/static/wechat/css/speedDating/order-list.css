@@ -1,0 +1,59 @@
+@import url("common.css");
+body{font-family: "微软雅黑";background-color: #e9e9e9;}
+.border-radius{border-radius: 5px;}
+.bd0{border: 0 !important;}
+.gray{background: #1c1c1c;}
+.red{background: #ca353a;}
+#wrap{width: 100%;}
+/*****************************************滑动门通用样式*****************************************************************/
+.tabbed_content{background-color:none;width:100%;height: 100%;position: relative;}
+.tabs{width:100%;height:3em;line-height:3em;position:relative;/* background:#F3F3F3;*/background:#ffffff;border-bottom:solid 1px #e0e0e0;overflow:hidden;}
+.tabs h2{padding-left:10px;float:left;}
+.tabs .moving_bg{width: 20%;_width: 20%;height: 0px;border-bottom: solid 4px #ca353a;position: absolute;left: 0;background-position: bottom center;background-repeat: no-repeat;font-weight: bold;overflow: hidden;margin: 0 2.5%;border-radius: 5px;top: 2.4em;}
+.tabs .tab_item{font-size: .9em;display:block;float:left;width:25%;text-align:center;position:relative;cursor:pointer;color:#4f4f4f;font-weight:bold;overflow:hidden;}
+.tabs .tab_item:hover{font-weight:bold;}
+.tabbed_content .slide_content{overflow:hidden;background-color:#e9e9e9;position:relative;top: .4em;width:100%;font-size: .9em;}
+.tabslider{width:100%;height: 100%;}
+.tabslider .tabUl{display:none;float:left;margin:0px;width:100%;text-align:left;-ms-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;background:none;}
+.tabslider .tabUl.selected{display: inherit;}
+/*****************************************滑动门通用样式*****************************************************************/
+.tabUl li{width: 92%;border: 1px solid #b7b7b7;margin: 0 auto .4em;border-radius: 10px;overflow: hidden;background: #fff;padding-bottom: 0.8em;font-size: 0.8em;position: relative;}
+.list-title{padding: 0.2em 2%;position: relative;height: 2em;line-height: 2em;border-bottom: 1px solid #b7b7b7}
+.list-title span:nth-child(1){width: 66%;overflow: hidden;text-overflow:ellipsis;white-space:nowrap;}
+.item-class{width: 28%;position: absolute;right: 0px;top: 0px;color: #fff;border-bottom: 2.4em solid #b7b7b7;border-left: 1.4em solid transparent;height: 0;line-height: 2.4em;text-indent: 1em;font-size: 1em;font-weight: 600;letter-spacing: 2px;}
+/*新车运输*/.trans-newCar{border-bottom-color: #e7c524;}
+/*故障拖车*/.trouble-trailer{border-bottom-color: #ed7171;}
+.list-address,.list-time,.list-remark{padding: 1em 2% 0.5em;}
+.list-time,.list-remark{padding-top: 0em;}
+.list-remark{width: 72%;}
+.list-state{position: absolute;right: 5%;bottom: 1.2em;width: 20%;text-align: center;}
+/*正在进行*/.state-now{color: #0084ff;}
+/*已完成*/.state-down{color: #9ec3ee;}
+/*未匹配*/.state-none{color: #e11c30;}
+/*已转出*/.state-trans{color: #028156;}
+/*已取消*/.state-cancel{color: #b7b7b7;}
+
+.filter{position: fixed;right: 0;bottom: 20vh;z-index: 2;background: #fff;border-radius: 50%;width: 1em;height: 2.8em;font-size: 0.6em;padding: 0.2em 1.2em;letter-spacing: -2px;border: 1px solid #ca353a;color: #d76468;box-shadow: 0px 0px 10px #888888;}
+.layer{display: none;height: 100%;width: 100%;position: fixed;top: 0;z-index: 3;overflow: scroll;max-width: 750px;}
+.bg{background: rgba(000,000,000,0.6);width: 100%;height: 100%;position: fixed;z-index: -1;}
+.layer-con{width: 70%;margin: 16vh auto;background: #fff;border-radius: 4px;overflow: hidden;padding-bottom: 2em;}
+.layer-title{background: #f2f2f2;position: relative;padding: 0.2em 0;}
+.title-name{width: 100%;display: inline-block;text-align: center;font-size: 0.9em;}
+.rule_intro{color: #fff;line-height: 1.4;font-size: 0.8em;font-weight: 400;}
+.close{width: 10%;position: absolute;right: 0%;top: .2em;z-index: 999;}
+.layer-time,.layer-words,.layer-items{width: 90%;margin: 0.6em auto;}
+.layer-con-title{margin: 0.6em 0;}
+.layer .input{border: 0;width: 44%;height: 3em;background: url(../../img/speedDating/layer-time.png) no-repeat 108% 0.5em;background-size: 2.5em;background-color: #f2f2f2;font-size: 0.6em;}
+.layer-time em{display: inline-block;width: 6%;text-align: center;}
+.layer-words .input{width: 100%;background: url(../../img/speedDating/layer-words.png) no-repeat 100% 0;background-size: 3em;background-color: #f2f2f2;}
+.layer .item-name{height: 2em;}
+.down_btn{background: #dd1d32;width: 35%;margin: 1em 5% 0 12.5%;text-align: center;height: 2.2em;line-height: 2.2em;border-radius: 4px;color: #fff;display: inline-block;}
+.reset{margin-left: 0;background: #c8c8c8;}
+
+.none-date{
+	display: inline-block;
+    width: 100%;
+    text-align: center;
+    font-size: 0.7em;
+    color: #000
+}

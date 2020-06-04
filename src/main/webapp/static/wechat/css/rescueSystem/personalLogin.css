@@ -1,0 +1,67 @@
+/*第一部分:logo和提示语*/
+.logo-container{width: 100%;}
+.logo-img,.phone-content{width: 88%; margin: 0 auto;}
+.logo-img{padding: 4rem 0 3rem 0;}
+.logo-img .mylogo img{width:44px;}
+.title>ul{height: 44px; line-height: 22px;}
+.title>ul>li:first-child{font-size: 1rem; font-weight: bold;}
+.title>ul>li:last-child{font-size: 0.4rem; color: #A6A6A6;}
+.title{margin-left:1rem;}
+/*第二部分手机号*/
+
+.phone-content{margin-top:1rem; margin-bottom:5rem;}
+.mobile-txt{font-size: 0.8rem; color: #A6A6A6; padding-bottom: 1rem;}
+.mobile-box{border-bottom: 1px solid #A6A6A6;}
+.mobile-box input{font-size: 1rem; width: 100%; border: none; padding-bottom: 0.6rem; background: #F2F2F2;}
+.next{margin-top: 3rem; width: 100%;}
+.next span{display: inline-block; width: 30%; height: 30px; line-height: 30px; background: #9B9B9B; color: #fff; text-align: center; border-radius: 15px;}
+.top-container>div{color: #E7072D; text-align: center; height: 50px; line-height: 50px; margin-top:5rem;}
+
+/*.login-box{position: absolute; width: 100%; top: -7rem;}*/
+/*弹出框*/
+.mask{position: fixed; top:0; left:0; right: 0; bottom: 0; z-index: 999; background: rgba(0,0,0,0.5);}
+.mask .state{position: absolute; top: 25%; left: 10%; right: 10%; bottom: 50%; background: #fff; border-radius: 5px;}
+.waring{padding: 1rem; text-align: center;}
+.waring p{line-height:30px; font-size: 0.9rem; letter-spacing:2px;}
+.verification-code{margin-top: 3rem;}
+.verification-code .code input{background: #F0F0F0; border: none;}
+.code{position: relative;}
+.code>p{padding-bottom: 0.3rem;}
+.code p input{height: 30px; line-height: 30px; font-size: 1rem; letter-spacing: 6vw; padding-left:2vw; width:61%;}
+.codeList span{display: inline-block; float: left; width:6vw; margin-right:10px; border-bottom: 2px solid #D8D8D8;}
+input::-webkit-input-placeholder{letter-spacing: 0; font-size: 0.6rem;}
+.send-code{position: absolute; bottom:3px; right: 0;}
+#btnSendCode1{height: 30px; font-size: 0.9rem;}
+/*登录注册按钮*/
+.login{width: 100%;}
+.login span{background: #9B9B9B; font-size: 1rem; width: 35%; display: inline-block; height: 30px; line-height: 30px; color: #fff; border-radius: 15px;}
+input[type=checkbox]{width: 16px; height: 16px; border: 1px solid #D61830; position: relative; top: 0.2rem; left: -0.2rem; -webkit-appearance: none; -moz-appearance: none; appearance: none;}
+input[type=checkbox]:checked{background: url('../../img/rescueSystem/checked.png') center center no-repeat; background-size: 16px;}
+.check{font-size: 0.8rem;}
+.check span{color: #868686;}
+.check a{color: #FF012F;}
+/*注册完成登录按钮变成黑色*/
+.login span.active{background: #000;}
+
+#layerAgreement{
+	    display: none;
+    position: fixed;
+    width: 98%;
+    height: 100%;
+    background: #fff;
+    z-index: 999;
+    top: 0;
+    overflow: scroll;
+    padding: 3%;
+}
+#layerAgreement p.closeAgreement{
+position: absolute;
+    right: 5%;
+    font-size: 2em;
+    top: 0;}
+#layerAgreement h3{
+    text-align: center;
+    margin: 1em 0;}
+#layerAgreement p{
+    font-size: 0.8em;
+    margin-bottom: 0.5em;}

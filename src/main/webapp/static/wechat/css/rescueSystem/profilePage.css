@@ -1,0 +1,14 @@
+.profile-box{width: 100%;}
+.profile-content{padding:2rem; background: #fff;}
+.sex{margin-bottom: 1rem;}
+.sex>div.sexName{height: 20px; color: #A2A2A2; font-size: 0.8rem;}
+.sex-type{padding: 0.3rem 0 1rem 0; border-bottom: 1px solid #E7E7E7;}
+.sex-type input{font-size: 0.9rem; font-weight: bold; color: #333333; border: none;}
+input::-webkit-input-placeholder{color: #333333;}
+.sex-type span img{width: 45%;}
+/*第三部分 保存*/
+.save{position: fixed; bottom:2.5rem; left: 0; width: 100%;}
+.save>div{text-align: center;}
+.save>div>span{display: inline-block; background: #9B9B9B; width: 38%; height: 33px; line-height: 33px; color: #ffffff; font-size: 1rem; border-radius: 28px; font-weight: bold;}
+/*保存完后变成红色的css*/
+.save>div>span.bgColor{background: #DC1C31;}

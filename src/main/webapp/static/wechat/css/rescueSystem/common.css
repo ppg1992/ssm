@@ -1,0 +1,42 @@
+/**
+ * 初始化HTML标签及常用类型
+ * @kivenhan
+ * www.shopnc.net
+ * Apr-01-2012
+ **/
+
+/* ===============
+ * 重新定义Html元素
+ * =============== */
+html, body, div, ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, fieldset, input { padding: 0; margin: 0;}
+h1, h2, h3, h4, h5, h6, pre, code, address, caption, cite, code, em, strong, table, th, td { font-size: 1em; font-style: normal; font-weight: normal;}
+strong { font-weight: bold;}
+ul, ol { list-style: none outside none;}
+fieldset, img { border: medium none;}
+caption, th {  text-align: left;}
+table { border-collapse: collapse; border-spacing: 0;}
+body {  color: #333333; font: 14px/1 Tahoma, Arial, "\5b8b\4f53", sans-serif;  background: #F2F2F2;}
+input, select, textarea { font: 12px/1 Tahoma, Arial, "\5b8b\4f53", sans-serif; outline: none;    }
+a { outline: medium none; text-decoration: none;color: #000;}
+a:link, a:visited, a:active { text-decoration: none;}
+i, cite, em { font-style: normal;}
+img { vertical-align: middle;}
+html {box-sizing: border-box;}
+/* Clearfix,避免因子元素浮动而导致的父元素高度缺失能问题 */
+.clearfix:after { clear: both; content: "."; display: block; height: 0; line-height: 0; visibility: hidden;}
+table {  border-collapse: collapse;  border-spacing: 0; }
+/* ==========================
+ * 为旧版本浏览器格式化Html5元素
+ * ========================== */
+article, aside, dialog, footer, header, section, footer, nav, figure, menu { display:block; }
+/*定位
+******************************/
+.tl { text-align:left !important;}
+.tc { text-align:center !important; }
+.tr { text-align:right !important;}
+.bc { margin-right:auto ;margin-left:auto;}
+.fl { float:left; }
+.fr { float:right;}
+.dn { display:none;}
+.db{display: block;}
+.clear { clear: both; height: 0; font-size: 1px; }

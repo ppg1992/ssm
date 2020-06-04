@@ -1,0 +1,124 @@
+@import url("common.css");
+body{font-family: "微软雅黑";background-color: #e9e9e9;}
+.border-radius{border-radius: 5px;}
+.bd0{border: 0 !important;}
+.gray{background: #1c1c1c;}
+.red{background: #ca353a;}
+
+#wrap{
+	width: 100%;
+    height: 100%;
+}
+/*****************************************滑动门通用样式*****************************************************************/
+.tabbed_content{background-color:none;width:100%;height: 100%;position: relative;}
+.tabs{width:100%;height:3em;line-height:3em;position:relative;/* background:#F3F3F3; */background:#ffffff;border-bottom:solid 1px #e0e0e0;overflow:hidden;z-index: 201;}
+.tabs h2{padding-left:10px;float:left;}
+.tabs .moving_bg{
+	    width: 20%;
+    _width: 20%;
+    height: 4px;
+    border-bottom: solid 4px #ff8201;
+    position: absolute;
+    z-index: 190;
+    left: 0;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    font-weight: bold;
+    overflow: hidden;
+    margin: 0 2.5%;
+    border-radius: 5px;
+    top: 2.4em;
+}
+.tabs .tab_item{font-size: .9em;display:block;float:left;width:25%;text-align:center;z-index:200;position:relative;cursor:pointer;color:#4f4f4f;font-weight:bold;overflow:hidden;}
+
+.tabs .tab_item:hover{font-weight:bold;}
+.tabbed_content .slide_content{overflow:hidden;background-color:#ffffff;position:relative;top: .4em;width:100%;font-size: .9em;}
+.tabslider{width:100%;height: 100%;}
+.tabslider .tabUl{display:none;float:left;margin:0px;width:100%;text-align:left;-ms-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;/* padding和border被包含在定义的width和height之内 */background:none;}
+.tabslider .tabUl.selected{display: inherit;}
+
+/*****************************************滑动门通用样式*****************************************************************/
+
+
+.report-intro{     width: 88%;
+    margin: 0 6%;
+  }
+.report-intro .report-list{width: 100%;clear: both;display: block;float: left;line-height: 3em;text-align: left;position: relative;border-bottom: 1px solid #e1e1e1;font-size: 0.88em;}
+
+.report-intro span{width: 30%;display: inline-block;color: #000;}
+.report-intro .input{width: 66%;border: 0;margin-right: 4%;font-size: inherit;background: transparent; }
+
+
+
+.ul_tab_3 .report-intro .time-line-list{
+	border-bottom: 1px solid #e1e1e1;font-size: 0.88em;
+	    position: relative;
+    border-left: 1px solid #000;
+        padding-left: 2em;
+color: #9d9d9d;
+}
+.line-icon{
+	    position: absolute;
+    left: -5px;
+    width: 10px;
+}
+.time-line-intro{
+	line-height: 3em;
+}
+.time-line-time{
+	    font-size: 0.88em;
+    margin: 1em 0;
+}
+.line-icon.down{
+background: #fff;
+    width: 20px;
+    left: -10px;
+    height: 3em;
+    display: flex;
+    align-items: center;
+}
+.time-line-intro.down{
+	font-size: 1.1em;
+	color: #000;
+}
+.map {
+	height: 100%;
+}
+.amap-icon img {
+    width: 40px;
+}
+.amap-lib-marker-from,.amap-lib-marker-to{
+	display: none !important;
+}
+.refresh{
+	    position: fixed;
+    bottom: 10em;
+    width: 2em;
+}
+.map-intro{
+    position: fixed;
+    bottom: 2em;
+    background: #fff;
+    width: 90%;
+    left: 5%;
+    border-radius: 5px;
+    padding: 4%;
+    font-size: 0.8em;
+    color: #333333;
+
+}
+.amap-controls,.amap-logo,.amap-copyright{
+	display: none;
+	visibility:hidden !important;
+}
+.map-time{
+	    font-size: 1.4em;
+    color: #000;
+    margin-bottom: 4%;
+}
+.map-distance{
+	    margin-bottom: 0.4em;
+}
+.map-intro p em{
+	    color: #49a3f7;
+}

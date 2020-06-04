@@ -1,0 +1,127 @@
+body{
+	padding:0;
+	margin:0;
+	font-family:"iconfont" !important;
+	font-family: "微软雅黑";
+}
+ul,li,h1,h2,h3,h4,h5,h6,span{
+	padding:0;
+	margin:0;
+	text-decoration: none;
+	list-style-type: none;
+}
+.back-m{
+	margin-top:44px;
+	width:100%;
+	background:#ECDD11;
+	font-size:12px;
+}
+.content{
+	margin:0px auto 1px auto;
+	}
+.spanover{
+	display:block;
+	width:100%;
+	height:20px;
+	line-height: 20px;
+	font-size: 18px;
+	color:#D35400;
+	font-weight: bold;
+}
+input{
+	padding:2px;
+}
+h1.mui-title {
+    font-family: "微软雅黑";
+	}
+.todo{
+	color:#F1C40F;
+	background:#fff;
+	border-top:1px solid #D8D6D6;
+	border-bottom:1px solid #D8D6D6;
+}
+label.iconfont{
+	color:#999;
+	width:30%;
+	padding:7px;
+}
+
+.todo li {
+    border-bottom: 1px solid #D8D6D6;
+    width:94%;
+    height:38px;
+    margin: auto;
+    overflow: hidden;
+}
+.todo-icon {
+    float: left;
+    font-size: 24px;
+    padding: 15px 22px 0 0;
+}
+.todo-content {
+    padding-top: 10px;
+    overflow: hidden;
+}
+.todo-name {
+    color:#F1C40F;
+    font-size: 25px;
+    margin: 1px 0 3px;
+}
+.block-s{
+	position: relative;
+	top: -45px;
+	left:220px;
+}
+
+h4{
+	font-weight: 500;
+}
+.todo-content input{
+	margin-top: 5px;;	
+}
+.messa{
+	color:#fff;
+	font-size: 18px;
+	line-height: 40px;
+	text-align: center;
+	width:100%;
+	height: 40px;
+	margin:0 auto 3px auto;
+	background:#F3A374;
+	cursor: pointer;
+	font-weight: bold;
+	border-radius: 3px;
+}
+.messa-s{
+	color:#fff;
+	font-size: 18px;
+	line-height: 40px;
+	text-align: center;
+	width:100%;
+	height: 40px;
+	margin:0 auto 3px auto;
+	background:#F3A374;
+	cursor: pointer;
+	font-weight: bold;
+	border-radius: 3px;
+}
+.messa-s{
+	display:none;
+}
+.buttom{
+	margin:0px auto 0 auto;
+	width:100%;
+	height:44px;
+	background:#1ABC9C;
+	font-size: 18px;
+	border-radius: 2px;
+}
+button{
+	width:100%;
+	height:44px;
+	background:#1ABC9C;
+	font-size: 18px;
+	/*position: fixed;
+	bottom:0;
+	left: 0;*/
+}

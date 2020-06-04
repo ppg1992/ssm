@@ -1,0 +1,13 @@
+body{background: #fff;}
+.head-phone{width: 100%;}
+.head-phone .head-box{padding: 3rem 2rem 1rem 2rem;}
+.head-box .head-img{width: 60px;border-radius: 50%;}
+.head-img img{width: 100%;}
+.name span{height: 60px;line-height: 60px;font-size: 1.3rem;font-weight: bold;margin-left: 1rem;}
+/*第二部分*/.container-list{padding: 0 2rem;font-weight: bold;}
+.container-list a{display: block;height: 50px;line-height: 50px;border-bottom: 1px solid #E4E4E4;}
+.container-list a div:first-child{float: left;}
+.container-list a div:last-child{float: right;}
+.container-list a div>img{width: 35%;}
+/*第三部分退出登录*/.logout{display: block;width: 100%;position: fixed;bottom:4rem;left:0;}
+.logout>div{background: #1C1C1C;font-weight: bold;font-size: 1rem;color: #ffffff;text-align: center;width: 30%;margin: 0 auto;padding: 0.5rem;border-radius: 16px;}

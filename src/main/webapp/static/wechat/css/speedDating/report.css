@@ -1,0 +1,150 @@
+@import url("common.css");
+
+/*input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], select, textarea {
+    line-height: inherit;
+    width: 100%;
+    height: inherit;
+    margin-bottom: 0;
+    padding: 0;
+    -webkit-user-select: text;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 0;
+    outline: 0;
+    background-color: #fff;
+    -webkit-appearance: none; 
+}
+p{
+    font-size: inherit;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: inherit;
+} */
+
+body{font-family: "微软雅黑";background-color: #e9e9e9;}
+.border-radius{border-radius: 5px;}
+.bd0{border: 0;}
+.gray{background: #1c1c1c;}
+.red{background: #ca353a;}
+.blue{background: #015EB1;}
+.mtop4{margin-top: 0.4em;}
+.icon-half{border-top-left-radius: 0;border-bottom-left-radius: 0;}
+.icon-box-shadow{box-shadow: 2px 2px 0px #cacaca;}
+#wrap{min-height: 99%;background: url('../../img/speedDating/report_bg.jpg') no-repeat 0 7em;background-size: cover;padding-top: 2%;}
+.item{width: 86%;height: 4em;margin: 0 auto 0.4em;line-height: 4em;background: #f6f6f6;padding: 0 4%;}
+.icon{color: #fff;padding: 0.2em 0.4em;margin-right: 2%;}
+.arrow{margin-left: 4%;}
+.item-name,.item .arrow{color: #4c4a4a}
+.item-name{width: 42%;background: transparent;border: 0;overflow: hidden;text-overflow:ellipsis;white-space:nowrap;}
+.content{background: #fff;}
+
+.report-title{padding: 1em 0;}
+.report-intro{width: 78%;margin: 0 11%;}
+.report-intro .report-list{width: 100%;height: 3em;clear: both;display: block;float: left;line-height: 3em;text-align: left;position: relative;border-bottom: 1px solid #e1e1e1;color: #9e9e9e;font-size: 0.88em;}
+.report-intro .date{color: #000;}
+.report-intro span{width: 30%;}
+.report-intro .arrow{position: absolute;right: 0;}
+.report-intro .input{width: 66%;border: 0;margin-right: 4%;font-size: inherit;color: #9e9e9e;background: transparent;overflow: hidden;text-overflow:ellipsis;white-space:nowrap;}
+.report-intro .plate_number{height: 3em;width: 80%;}
+.report-intro .date .input{color: #000;height: 3em;}
+.report-intro .case-number{width: 6em;border: 1px solid #b7b7b7;height: 2em;margin-top: 0.5em;line-height: 2em;border-radius: 5px;margin-right: 0;}
+.case-number .sub,.case-number .add{width: 1.8em;display: inline-block;border-right: 1px solid #B7B7B7;text-align: center;line-height: 1.8em;}
+.case-number #case_number{width: 2.2em;margin-right: 0;text-align: center;}
+.case-number .add{border-left: 1px solid #B7B7B7;border-right: 0;}
+.footer{padding: 0.2em 0 2em 0;}
+.footer .item{position: relative;background: #fff;height: auto;line-height: inherit;padding-bottom: 2em;padding-top: 0.5em;}
+.footer-con{height: 4em;line-height: 4em;}
+.remark{width: 96%;min-height: 4em;background: #f2f2f2;text-align: left;padding: 0.5em 2%;font-size: 1em;}
+.submit{width: 40%;height: 2em;position: absolute;left: 30%;bottom: -1em;background: #ca353a;color: #fff;border-radius: 20px;text-align: center;line-height: 2em;}
+
+.province_center{width: 100%;bottom: -100%;left: 0;position: fixed;background: #fff;height: 10em;overflow: auto;z-index: 9999;box-shadow: 0.1em 0.1em 1em rgb(0,0,0);}
+.province_center li{width: 2em;float: left;margin: 0.2em 0.4em;font-size: 0.9em;border: 1px solid #b7b7b7;height: 2em;line-height: 2em;text-align: center;}
+#plate_number .input{height: 3em;}
+ /*弹出地图*/ 
+.layer,.mask{width: 100%;height: 100%;position: fixed;top: 0;left: 0;display: none;}
+#container{width: 100%;height: 100%;}
+.layer .info{display: flex;align-items: center;top: 85%;left: 1rem;}
+#map-center{color: #0288d1;font-size: 0.8em;}
+.layer-btn{display: block;text-align: center;width: 24%;font-size: 0.9em;}
+#panel{position: fixed;background-color: white;max-height: 90%;overflow-y: auto;/* top: 10px;*/right: 0;width: 100%;border: 0;height: 50vh;bottom: 0;display: none;}
+.amap-controls,.amap-copyright,.amap-logo{display: none;visibility: hidden !important;}
+.amap_lib_placeSearch{border: 0;}
+
+/*大板专线 和 顺风车*/
+.my-item{width: 92%;background: #f6f6f6;margin: 0 auto;padding: 5%;display: flex;}
+.my-item .icon{height: 1.8em;width: 1.8em;padding: 0;font-size: 0.8em;line-height: 1.8em;text-align: center;}
+.my-item .report-intro{margin: 0 5%;}
+.my-item .report-intro input{width: 100%;}
+.footer-title{margin-bottom: 1em;font-size: 0.7em;}
+.left-price,.right-price{width:45%;height:100%;box-shadow: 0 0 10px #e0dece;-webkit-box-shadow: 0 0 10px #e0dece;}
+.footer .price{height: 4em;line-height: 5em;font-size: 0.7em;text-indent: 1em;}
+.footer .price-info{font-size: 1.5rem;background: #2E2E2E;color: #fff;text-align: center;border-bottom-left-radius: 5px;border-bottom-right-radius: 5px;}
+.log{width: 10%;text-align: center;line-height: 68px;color: #000;}
+.right-price{position: relative;}
+.right-price .price-info{background: #D71B32;}
+.footer .right-price .price{color:#D71B32}
+.footer .price span{font-size: 2em;font-weight: 400;}
+.price-flag{position: absolute;top: -4px;right: 0;font-size: 0.6em;color: #000;background: #EDD201;padding: 0.2em 0.4em;}
+/*阅读协议*/
+.read{margin-top: 1.6em;text-align: center;}
+.read span,.read a{font-size: 0.7em;}
+input[type=checkbox],input[type=radio]{width: 1em;height: 1em;background: #bbb;border-radius: 50%;z-index: 1;vertical-align: middle;}
+input[type=checkbox]:checked,input[type=radio]:checked{background: url("../../img/speedDating/showmsg_success.png") center center /cover no-repeat;}
+/*弹出框*/
+.bg{width: 100%;height: 100%;position: absolute;top: 0;left: 0;background: rgba(000,000,000,0.6);}
+.mask-con{width: 74%;height: 28vh;background: #fff;z-index: 2;position: absolute;top: 25%;left: 13%;}
+.mask-txt{font-size: 0.8em;padding: 1.5em;text-align: left;}
+.mask-choice{width: 30%;font-size: 0.8em;margin-left: 12%;}
+.mask-con .submit{bottom: 1em;border-radius: inherit;width: 50%;left: 25%;}
+
+
+#T-province{width: 16%;border:0;float:left;paddin:0;margin-top: 0.78em;}
+#searchInput{position: fixed;top: 2em;right: 2%;width: 96%;height: 3em;}
+
+#layerAgreement{
+	    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 999;
+    top: 0;
+    overflow: scroll;
+    padding: 3%;
+}
+#layerAgreement p.closeAgreement{
+position: absolute;
+    right: 5%;
+    font-size: 2em;
+    top: 0;}
+#layerAgreement h3{
+    text-align: center;
+    margin: 1em 0;}
+#layerAgreement p{
+    font-size: 0.8em;
+    margin-bottom: 0.5em;}
+    
+#panelDiv {
+	position: fixed;
+	background-color: white;
+	max-height: 90%;
+	overflow-y: auto;
+	top: 2em;
+    right: 2%;
+    width: 96%;
+}
+.amap-logo,.amap-copyright,.amap-zoomcontrol,.amap-content-body,.amap-combo-sharp,.amap-combo-close{
+  display: none !important;visibility: hidden !important;
+}
+#ul-info{
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    top: 82px;
+    margin:0px -27px;
+}
+#ul-info li{
+	padding:3px 0;
+	background: white;
+ 	color:#333;
+}
+			
